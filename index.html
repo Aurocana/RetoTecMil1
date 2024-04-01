@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Inicio</title>
+		<!-- Bootstrap CSS -->
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" rel="stylesheet">
+		<style>
+			body{
+				background-color: #5755d9;
+			}
+			.login-form{
+				max-width: 400px;
+				margin: auto;
+				background-color: #ffffff;
+				border-radius: 20px;
+			}
+			#username, #password{
+				width: 100%;
+				border: 2px solid #ced4da;
+				border-radius: 5px;
+			} 
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row justify-content-center mt-5">
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title text-center">Login</h5>
+							<form id="loginForm">
+								<div class="mb-3">
+									<label for="username" class="form-label">Username</label>
+									<input id="username" type="text" class="form-control" id="username" name="username" required>
+								</div>
+								<div class="mb-3">
+									<label  for="password" class="form-label">Password</label>
+									<input id="password" type="password" class="form-control" id="password" name="password" required>
+								
+								</div>
+								<div class="text-center">
+									<button type="submit" class="btn btn-primary">Login</button>
+								</div>
+								
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		loginForm.addEventListener("submit", function (event) {
+			event.preventDefault();
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+			if (username == "admin" && password == "admin123"){
+				alert("Login correcto")
+				window.location.href = "main.html"
+			}else{
+				alert("Credenciales incorrectas")
+			}
+		});
+	});
+</script>
+
